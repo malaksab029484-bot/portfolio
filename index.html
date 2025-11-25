@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touseef Mushtaq - Senior Graphics Designer</title>
+    <style>
+        :root {
+            --primary-color: #0a66c2;
+            --secondary-color: #378fe9;
+            --dark-color: #1d2226;
+            --light-color: #f3f2ef;
+            --gray-color: #86888a;
+            --white-color: #ffffff;
+            --shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white-color);
+            box-shadow: var(--shadow);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--white-color);
+            padding: 60px 0;
+            margin-bottom: 30px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-color);
+        }
+        
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .hero-text h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .location {
+            display: flex;
+            align-items: center;
+            color: var(--gray-color);
+            margin-bottom: 15px;
+        }
+        
+        .location i {
+            margin-right: 8px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Section Styles */
+        section {
+            background-color: var(--white-color);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        /* About Section */
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-card {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .skill-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .skill-endorsements {
+            display: flex;
+            align-items: center;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+        
+        .endorsement-count {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+        
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .experience-company {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .experience-duration {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+        
+        .experience-location {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .experience-responsibilities {
+            list-style-type: none;
+        }
+        
+        .experience-responsibilities li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .experience-responsibilities li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .experience-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .skill-tag {
+            background-color: var(--light-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+        
+        /* Education Section */
+        .education-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .education-item:last-child {
+            border-bottom: none;
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .education-degree {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .education-school {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .education-duration {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+        
+        .education-grade {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .education-activities {
+            margin-bottom: 15px;
+        }
+        
+        .education-details {
+            margin-bottom: 15px;
+        }
+        
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .certification-card {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .certification-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .certification-issuer {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .certification-date {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .project-duration {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .project-description {
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .experience-header, .education-header {
+                flex-direction: column;
+            }
+            
+            .skills-grid, .certifications-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Touseef Mushtaq</div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-img">
+                    <!-- Placeholder for profile image -->
+                    <span>Profile Image</span>
+                </div>
+                <div class="hero-text">
+                    <h1>Touseef Mushtaq</h1>
+                    <h2>Senior Graphics Designer | Team Lead | UI/UX Designer | Digital Marketing | Video Editor | Animator</h2>
+                    <div class="location">
+                        <i>📍</i>
+                        <span>Lahore, Punjab, Pakistan</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+                        <a href="mailto:touseef.mushtaq@example.com">Email</a>
+                        <a href="https://github.com/yourusername" target="_blank">Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About</h2>
+            <div class="about-text">
+                <p>My strong background in "UI/UX Design, Branding, Animation, Video Editing & Graphics Design" and action-driven leadership skills combined with my overseas experiences, make me an excellent choice for this position.</p>
+                <p>I bring around 10+ years of experience out of which 1 year of core experience in ecommerce's relationship. This includes managing day-to-day relationship tasks, sellers support, liaising with vendors and shops, keeping updated & quality inventory, market research, creating attractive social media post designs, Banners Designing, Web Design, all print media, and reducing team friction. Simply put, I love making the cogwheels of the marketplace run smoothly and evolve to adapt with the changing needs.</p>
+                <p>4 years of experience in UAE in advertising field Signage, Printing, Exhibition and Interior. I have good knowledge of production handling and designing. I was working in an advertising company in Sharjah.</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-title">Soft Skills</div>
+                    <ul class="experience-responsibilities">
+                        <li>Excellent planning skills</li>
+                        <li>Excellent people skills</li>
+                        <li>Excellent problem-solving skills</li>
+                        <li>Excellent attention to detail</li>
+                        <li>The ability to work under pressure to deadlines</li>
+                        <li>Excellent time management skills</li>
+                        <li>Excellent knowledge in material handling techniques</li>
+                        <li>Good spoken and written communication skills</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-title">Technical Skills</div>
+                    <ul class="experience-responsibilities">
+                        <li>Adobe Photoshop</li>
+                        <li>Adobe Illustrator</li>
+                        <li>Adobe XD</li>
+                        <li>Sketch</li>
+                        <li>Canva</li>
+                        <li>Figma</li>
+                        <li>Adobe InDesign</li>
+                        <li>Adobe Premiere pro</li>
+                        <li>Adobe After Effects (Basic)</li>
+                        <li>Adobe Acrobat Professional</li>
+                        <li>MS Office Suite</li>
+                        <li>Excel sheets</li>
+                        <li>Monitoring dashboards</li>
+                        <li>Research skills</li>
+                        <li>Analytical skills</li>
+                        <li>Social media handling</li>
+                        <li>Reporting</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">SR. GRAPHICS DESIGNER</div>
+                        <div class="experience-company">We360</div>
+                    </div>
+                    <div class="experience-duration">Mar 2025 - Present · 9 mos</div>
+                </div>
+                <div class="experience-location">Lahore, Punjab, Pakistan · On-site</div>
+                <ul class="experience-responsibilities">
+                    <li>Social Media & Content: Designed social media Static, animations and story posts for multiple brands, including engaging carousels and posts for special events.</li>
+                    <li>Digital Advertising Design: Created effective static designs, slides (top, bottom and side) for paid ad campaigns, Email Newsletters, hero & mobile banners for websites and product deals.</li>
+                    <li>Brand Collateral: Developed professional business profiles, brochures, product catalogues and product branding elements (labels and packaging).</li>
+                    <li>Image & Video Production: Edited and animated paid PR videos, along with modifying and editing product images from real photo shoots.</li>
+                    <li>Technical Skills: Proficient in creating infographics and utilizing AI to generate new product images.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">SR. GRAPHICS DESIGNER</div>
+                        <div class="experience-company">GTechSources</div>
+                    </div>
+                    <div class="experience-duration">Feb 2024 - Jan 2025 · 1 yr</div>
+                </div>
+                <div class="experience-location">Lahore, Punjab, Pakistan · On-site</div>
+                <ul class="experience-responsibilities">
+                    <li>Social Media Products Post & Story Post Design</li>
+                    <li>Paid Ads Design</li>
+                    <li>Events Post Design</li>
+                    <li>Special Days Post Design</li>
+                    <li>Business Profiles, Brochures & Product Catalogues Design</li>
+                    <li>Email Newsletters Design</li>
+                    <li>Website Hero Banners & Blog Post Images Design</li>
+                    <li>Info Graphics Post Design</li>
+                    <li>Social Media Carousels Design</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Lead Graphics & UI/UX Designer</div>
+                        <div class="experience-company">Farosh.pk</div>
+                    </div>
+                    <div class="experience-duration">Oct 2020 - Jul 2024 · 3 yrs 10 mos</div>
+                </div>
+                <div class="experience-location">Lahore, Punjab, Pakistan · On-site</div>
+                <div class="experience-responsibilities">
+                    <h4>Graphics Design Management:</h4>
+                    <ul>
+                        <li>Devising SOP for all teams.</li>
+                        <li>Maintaining departmental KPIs, SOPs, and policies</li>
+                        <li>All Social Media Platform Post Design.</li>
+                        <li>Paid Ads Design</li>
+                        <li>Web Designing</li>
+                        <li>Mobile apps Designing</li>
+                        <li>Applications designing for user interface & user experience</li>
+                        <li>Design logos, brochures, business cards, packaging, and banners</li>
+                        <li>Design business profiles</li>
+                        <li>Design email newsletters</li>
+                    </ul>
+                    
+                    <h4>Relationships Management:</h4>
+                    <ul>
+                        <li>Managing vendor relations</li>
+                        <li>Carrying out vendor onboarding and training sessions</li>
+                        <li>Ensuring knowledge resources are provided for vendor support</li>
+                        <li>Ensuring lowest rates and best commitment</li>
+                        <li>Ensuring timely and proper product uploading</li>
+                        <li>Ensure product image and description quality</li>
+                    </ul>
+                    
+                    <h4>Inventory Management:</h4>
+                    <ul>
+                        <li>Keeping inventory up-to-date and clean</li>
+                        <li>Delivering day-to-day operations</li>
+                        <li>Product's Pricing Management</li>
+                    </ul>
+                    
+                    <h4>Syncing the teams:</h4>
+                    <ul>
+                        <li>Regulating communication protocols</li>
+                        <li>Collaborating with HR to hire the best resource and train them</li>
+                        <li>Suggesting improvements in app and dashboard</li>
+                        <li>Handling disputes, sellers' feedbacks, and vendor assessments</li>
+                    </ul>
+                </div>
+                <div class="experience-skills">
+                    <span class="skill-tag">Web Design</span>
+                    <span class="skill-tag">Wireframing</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">Team Leadership</span>
+                    <span class="skill-tag">Vendor Management</span>
+                    <span class="skill-tag">Inventory Management</span>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">GRAPHICS DESIGN MANAGER</div>
+                        <div class="experience-company">OpenSol Global</div>
+                    </div>
+                    <div class="experience-duration">Mar 2015 - Oct 2020 · 5 yrs 8 mos</div>
+                </div>
+                <div class="experience-location">Lahore, Punjab, Pakistan</div>
+                <ul class="experience-responsibilities">
+                    <li>Supervise and lead the graphic designing team</li>
+                    <li>Participate in designing and redesigning computer graphics, web page graphics, logos, illustrations, advertisements, brochures and many other forms of visual communication</li>
+                    <li>Analyse and plan the framework of design according to the laid-out concept and established specifications of the project</li>
+                    <li>Ensure that the delivered products or services adhere to the policies and standards of the company</li>
+                    <li>Delegate job responsibilities among junior team members and oversee that quality work is being completed within the deadline</li>
+                    <li>Complete the project work within the timeline.</li>
+                    <li>Deal with the client and be the point of contact</li>
+                    <li>Oversee those new techniques and processes are used to provide best quality of designs</li>
+                    <li>Train and mentor junior designers and entry-level entrants</li>
+                    <li>Be aware of the latest techniques and procedures used in designs</li>
+                    <li>Suggest new ways of improving the quality of designs and other project issues</li>
+                    <li>Assist the team members to choose the right style, attractive graphics, images, and other visual elements to adept them according to the objectives of the project</li>
+                    <li>Leverage creative and marketing knowledge to develop new creative campaigns for specific targets</li>
+                    <li>Work in collaboration with colleagues across different departments</li>
+                    <li>Bring new business to the organization and sell current portfolio of work to prospective customers</li>
+                </ul>
+                <div class="experience-skills">
+                    <span class="skill-tag">Web Design</span>
+                    <span class="skill-tag">Wireframing</span>
+                    <span class="skill-tag">Team Management</span>
+                    <span class="skill-tag">Client Relations</span>
+                    <span class="skill-tag">Creative Direction</span>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Production Supervisor</div>
+                        <div class="experience-company">Naseer Neon</div>
+                    </div>
+                    <div class="experience-duration">Feb 2011 - Dec 2014 · 3 yrs 11 mos</div>
+                </div>
+                <div class="experience-location">Sharjah Emirate, United Arab Emirates · On-site</div>
+                <ul class="experience-responsibilities">
+                    <li>Establish daily, weekly and monthly objectives and communicate them to employees</li>
+                    <li>Manage the workflow by assigning responsibilities and preparing schedules</li>
+                    <li>Guide and coach employees, monitoring their productivity</li>
+                    <li>Oversee safe use of equipment and schedule regular maintenance</li>
+                    <li>Perform verification of production output according to specifications</li>
+                    <li>Prepare reports on performance and progress and present them to senior management</li>
+                    <li>Detect issues in efficiency and suggest improvements</li>
+                    <li>Consult new employees on how to safely use machinery and follow procedures</li>
+                    <li>Ensure strict adherence to safety guidelines and company standards</li>
+                </ul>
+                <div class="experience-skills">
+                    <span class="skill-tag">Time Management</span>
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Production Management</span>
+                    <span class="skill-tag">Team Supervision</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="education-degree">High School, Computer Science</div>
+                        <div class="education-school">Sialkot</div>
+                    </div>
+                    <div class="education-duration">Graduated</div>
+                </div>
+                <div class="education-grade">Grade: B</div>
+                <div class="education-activities">
+                    <p><strong>Activities and societies:</strong> Study only</p>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="education-degree">Intermediate In Computer Science</div>
+                        <div class="education-school">Sialkot</div>
+                    </div>
+                    <div class="education-duration">Graduated</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2 class="section-title">Licenses & Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-title">Diploma in Graphics Designer and Intermediate In Computer Science</div>
+                    <div class="certification-issuer">Diploma in Graphics Designer and Intermediate In Computer Science</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-title">Graphics Designer</div>
+                    <div class="project-duration">Jun 2009 - Nov 2012</div>
+                    <div class="project-description">
+                        <p>Associated with Sialkot</p>
+                    </div>
+                    <div class="experience-skills">
+                        <span class="skill-tag">Web & Graphic designing</span>
+                        <span class="skill-tag">Web Layout Designing</span>
+                        <span class="skill-tag">Logo Designing</span>
+                        <span class="skill-tag">Banners Designing</span>
+                        <span class="skill-tag">Leaflet & Brochure Designing</span>
+                        <span class="skill-tag">Business Cards Designing</span>
+                        <span class="skill-tag">Panaflex Designing</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <p>Contact: touseef.mushtaq@example.com</p>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Touseef Mushtaq. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
